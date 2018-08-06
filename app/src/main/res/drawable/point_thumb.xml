@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<shape xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:shape="oval"-->
+    <!--android:useLevel="false">-->
+    <!--<corners android:bottomRightRadius="10dp" android:topRightRadius="10dp"/>-->
+    <!--<solid android:color="#ffffd700"></solid>-->
+    <!--<size-->
+        <!--android:width="12dp"-->
+        <!--android:height="12dp"></size>-->
+<!--</shape>-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/seekbar_background">
+        <shape>
+            <solid android:color="#ffcccccc" />
+            <corners android:radius="10dp" />
+        </shape>
+    </item>
+
+    <item android:id="@+id/seekbar_progress">
+        <clip>
+            <shape>
+                <solid android:color="#ffffd700" />
+                <corners android:radius="10dp" />
+            </shape>
+        </clip>
+    </item>
+</layer-list>

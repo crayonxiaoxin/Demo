@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Demo</string>
+    <string name="connection_error">未能連接網絡。請檢查你的網絡。</string>
+
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+</resources>
