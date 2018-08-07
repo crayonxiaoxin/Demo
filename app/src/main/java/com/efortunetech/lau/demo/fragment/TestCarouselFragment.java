@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -18,6 +19,7 @@ import android.widget.Toast;
 
 import com.efortunetech.lau.demo.R;
 import com.efortunetech.lau.demo.adapter.MyCarouselFigurePagerAdapter;
+import com.efortunetech.lau.demo.adapter.TestGridManagerAdapter;
 import com.efortunetech.lau.demo.adapter.VideoAdapter;
 import com.efortunetech.lau.demo.bean.VideoBean;
 
@@ -132,9 +134,10 @@ public class TestCarouselFragment extends Fragment {
         });
 
         // add products
-        recyclerView.setLayoutManager(new LinearLayoutManager(mActivity, LinearLayoutManager.VERTICAL, false));
+//        recyclerView.setLayoutManager(new LinearLayoutManager(mActivity, LinearLayoutManager.VERTICAL, false));
+        recyclerView.setLayoutManager(new GridLayoutManager(mActivity,3));
         List<VideoBean> list = new ArrayList<>();
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 5; i++) {
             VideoBean videoBean = new VideoBean();
             videoBean.ID = i;
             videoBean.image = "";
@@ -143,9 +146,10 @@ public class TestCarouselFragment extends Fragment {
             videoBean.num3 = i;
             list.add(videoBean);
         }
-        VideoAdapter videoAdapter = new VideoAdapter(mActivity, list);
+//        VideoAdapter videoAdapter = new VideoAdapter(mActivity, list);
+        TestGridManagerAdapter videoAdapter = new TestGridManagerAdapter(mActivity, list);
         recyclerView.setAdapter(videoAdapter);
-        videoAdapter.setOnItemClickListener(new VideoAdapter.OnItemClickListener() {
+        videoAdapter.setOnItemClickListener(new TestGridManagerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
                 Toast.makeText(mActivity, "position => " + position, Toast.LENGTH_SHORT).show();
